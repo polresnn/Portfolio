@@ -1,0 +1,466 @@
+/* Josue Mojica Martinez — Portfolio
+   Minimal, jewelry-inspired. Bone white + silver. */
+
+:root {
+  --bone: #F2EBE3;
+  --silver: #C0C0C0;
+  --silver-dim: #A8A8A8;
+  --ink: #1A1A1A;
+  --muted: #4A4A4A;
+  --serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --sans: "Inter", "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+section { scroll-margin-top: 80px; }
+
+body {
+  background: var(--bone);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.65;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- Header ---------- */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: var(--bone);
+  border-bottom: 1px solid var(--silver);
+  z-index: 100;
+  padding: 22px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-family: var(--serif);
+  font-size: 18px;
+  letter-spacing: 0.18em;
+  font-weight: 400;
+  color: var(--ink);
+  text-transform: uppercase;
+}
+
+.nav { display: flex; gap: 40px; }
+
+.nav a {
+  position: relative;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding-bottom: 4px;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%; bottom: 0;
+  width: 0; height: 1px;
+  background: var(--silver);
+  transition: width 0.4s ease, left 0.4s ease;
+}
+
+.nav a:hover::after { width: 100%; left: 0; }
+
+/* ---------- Sections ---------- */
+section {
+  padding: 140px 48px;
+  opacity: 0;
+  transform: translateY(0);
+  transition: opacity 1.2s ease;
+}
+
+section.visible { opacity: 1; }
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 120px 48px;
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(38px, 6vw, 76px);
+  letter-spacing: 0.12em;
+  line-height: 1.15;
+  margin-bottom: 28px;
+  text-transform: uppercase;
+}
+
+.hero .subtitle {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 48px;
+}
+
+.hero p.intro {
+  max-width: 560px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 64px;
+}
+
+.divider {
+  width: 1px;
+  height: 48px;
+  background: var(--silver);
+  margin: 0 auto 48px;
+}
+
+.btn {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  border: 1px solid var(--silver);
+  padding: 16px 42px;
+  background: transparent;
+  transition: border-color 0.4s ease, color 0.4s ease;
+}
+
+.btn:hover { border-color: var(--ink); }
+
+/* ---------- Section heading ---------- */
+.section-head {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section-head .eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--silver-dim);
+  margin-bottom: 16px;
+}
+
+.section-head h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(32px, 4.5vw, 52px);
+  letter-spacing: 0.08em;
+  margin-bottom: 24px;
+}
+
+.section-head p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.rule {
+  width: 40px;
+  height: 1px;
+  background: var(--silver);
+  margin: 0 auto 28px;
+}
+
+/* ---------- About ---------- */
+.about {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.profile-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 1px solid var(--silver);
+  margin: 0 auto 36px;
+  background: var(--bone);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--silver-dim);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.about .name {
+  font-family: var(--serif);
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.about .title-line {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.about p {
+  color: var(--muted);
+  margin-bottom: 22px;
+  text-align: justify;
+}
+
+.about p strong {
+  color: var(--ink);
+  font-weight: 400;
+}
+
+.skills-grid {
+  margin-top: 72px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+.skills-grid h3 {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.skills-grid .col-rule {
+  width: 24px;
+  height: 1px;
+  background: var(--silver);
+  margin-bottom: 24px;
+}
+
+.skills-grid ul { list-style: none; }
+
+.skills-grid li {
+  font-size: 14px;
+  color: var(--ink);
+  padding: 8px 0;
+  position: relative;
+  padding-left: 22px;
+}
+
+.skills-grid li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--silver);
+}
+
+/* ---------- Code / Projects ---------- */
+.projects {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.card {
+  border: 1px solid var(--silver);
+  padding: 40px 36px;
+  background: var(--bone);
+  position: relative;
+  transition: border-color 0.4s ease;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 36px; right: 36px;
+  height: 1px;
+  background: var(--silver);
+  opacity: 0.6;
+}
+
+.card:hover { border-color: var(--ink); }
+
+.card h3 {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin-bottom: 14px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.tags {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--silver-dim);
+  margin-bottom: 28px;
+}
+
+.tags span { color: var(--silver); margin: 0 8px; }
+
+.card-links { display: flex; gap: 28px; }
+
+.card-links a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--silver);
+  padding-bottom: 3px;
+  transition: border-color 0.3s ease;
+}
+
+.card-links a:hover { border-color: var(--ink); }
+
+/* ---------- Design / Gallery ---------- */
+/* .gallery {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px 48px;
+}
+
+.piece figure {
+  margin: 0;
+}
+
+.piece .image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: #ECE4DA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--silver-dim);
+  font-size: 10px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.piece figcaption {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.piece figcaption .piece-name {
+  display: block;
+  color: var(--ink);
+  letter-spacing: 0.08em;
+  margin-bottom: 2px;
+} */
+.gallery {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px 48px;
+}
+
+.piece figure {
+  margin: 0;
+}
+
+.piece .image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: #ECE4DA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--silver-dim);
+  font-size: 10px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  overflow: hidden; /* ADD THIS - crops anything that overflows */
+  position: relative; /* ADD THIS - helps with positioning */
+}
+
+/* ADD THIS - styles for images inside the frame */
+.piece .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Fills the 3/4 frame perfectly */
+  display: block;
+}
+
+/* ADD THIS - styles for videos inside the frame */
+.piece .image video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Fills the 3/4 frame perfectly */
+  display: block;
+}
+
+.piece figcaption {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.piece figcaption .piece-name {
+  display: block;
+  color: var(--ink);
+  letter-spacing: 0.08em;
+  margin-bottom: 2px;
+}
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 48px 24px 64px;
+  border-top: 1px solid var(--silver);
+  color: var(--silver-dim);
+  font-size: 10px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 720px) {
+  .header { padding: 18px 24px; }
+  .nav { gap: 22px; }
+  .nav a { font-size: 10px; letter-spacing: 0.14em; }
+  .brand { font-size: 14px; }
+  section { padding: 100px 24px; }
+  .hero { padding: 120px 24px; }
+  .skills-grid,
+  .projects,
+  .gallery { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 480px) {
+  .nav { gap: 16px; }
+  .brand { letter-spacing: 0.1em; }
+}
